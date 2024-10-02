@@ -4,13 +4,22 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\ChooseProduct.cs">
+    <Compile Update="Forms\ConfigurarSafePrint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\ConfigurarEmbarcado.cs">
+    <Compile Update="Forms\ConfigurarSatelitti.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\InstalacaoDeEmbarcado.cs">
+    <Compile Update="Forms\ConfigurarShare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\InstalarSafePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\InstalarSatelitti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\InstalarShare.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

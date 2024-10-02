@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ConfiguratorNewest.Forms
 {
-    public partial class InstalacaoDeEmbarcado : Form
+    public partial class ConfigurarShare : Form
     {
-        public InstalacaoDeEmbarcado()
+        public ConfigurarShare()
         {
             InitializeComponent();
         }

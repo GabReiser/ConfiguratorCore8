@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConfiguratorNewest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f86b7b3ede99a76b20df05707eb5f6e735baff7b")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConfiguratorNewest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConfiguratorNewest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

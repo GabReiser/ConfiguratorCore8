@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ConfiguratorNewest.Forms
 {
-    public partial class ConfigurarEmbarcado : Form
+    public partial class InstalarSafePrint : Form
     {
-        public ConfigurarEmbarcado()
+        public InstalarSafePrint()
         {
             InitializeComponent();
         }
