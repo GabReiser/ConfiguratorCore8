@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "04+rf/D0BqKbpXHFEetF7Ssf+sQFzkIVVUK2WJ70kMCi1dtbFXyxbzwPhBkRXJNuJD52UNk8PBhKdBA9ZzCZsA==",
+  "success": true,
+  "projectFilePath": "D:\\Personal Repository\\ConfiguratorNewest\\ConfiguratorNewest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gabriel.oliveira\\.nuget\\packages\\fontawesome.sharp\\6.6.0\\fontawesome.sharp.6.6.0.nupkg.sha512",
+    "C:\\Users\\gabriel.oliveira\\.nuget\\packages\\realtaiizor\\3.8.0.7\\realtaiizor.3.8.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}
