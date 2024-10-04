@@ -168,5 +168,11 @@ namespace ConfiguratorNewest
             hideSubMenu();
             OpenChildForm(new ConfigurarShare());
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            OpenChildForm(new InstalarSafePrint());
+        }
     }
 }

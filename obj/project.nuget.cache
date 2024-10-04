@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "4wXN9QaOLIF/sBkL+GGV/v6G8tbff7hwD+EDZQcTUFVv5jwCC8qaUY8drtsdD/Z8ChyeRYzHjS2yXSwNrwpI7Q==",
+  "dgSpecHash": "KYzmStcM22TQrU8JVl1KnKVLKTzGTi4lCq3WC3OZsA//OGPqHcNa8m3fsKPasVT0Y2+CumG0MT+Y8zqBHnzVJg==",
   "success": true,
   "projectFilePath": "D:\\Personal Repository\\ConfiguratorCore8\\ConfiguratorNewest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gabriel.oliveira\\.nuget\\packages\\fontawesome.sharp\\6.6.0\\fontawesome.sharp.6.6.0.nupkg.sha512",
     "C:\\Users\\gabriel.oliveira\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\gabriel.oliveira\\.nuget\\packages\\realtaiizor\\3.8.0.7\\realtaiizor.3.8.0.7.nupkg.sha512",
+    "C:\\Users\\gabriel.oliveira\\.nuget\\packages\\restsharp\\112.1.0\\restsharp.112.1.0.nupkg.sha512",
     "C:\\Users\\gabriel.oliveira\\.nuget\\packages\\serilog\\4.0.2\\serilog.4.0.2.nupkg.sha512"
   ],
   "logs": []

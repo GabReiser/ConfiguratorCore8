@@ -12,7 +12,14 @@
     <PackageReference Include="FontAwesome.Sharp" Version="6.6.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="ReaLTaiizor" Version="3.8.0.7" />
+    <PackageReference Include="RestSharp" Version="112.1.0" />
     <PackageReference Include="Serilog" Version="4.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Smart.Utils">
+      <HintPath>Library\Smart.Utils.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +35,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Embedded\" />
+    <Folder Include="Instalation\Samsung\" />
   </ItemGroup>
 
 </Project>

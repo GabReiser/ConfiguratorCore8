@@ -50,3 +50,7 @@ D:\Personal Repository\ConfiguratorCore8\obj\Debug\net8.0-windows\ConfiguratorNe
 D:\Personal Repository\ConfiguratorCore8\obj\Debug\net8.0-windows\ConfiguratorNewest.Forms.InstalarSafePrint.resources
 D:\Personal Repository\ConfiguratorCore8\obj\Debug\net8.0-windows\ConfiguratorNewest.Forms.InstalarSatelitti.resources
 D:\Personal Repository\ConfiguratorCore8\obj\Debug\net8.0-windows\ConfiguratorNewest.Forms.InstalarShare.resources
+D:\Personal Repository\ConfiguratorCore8\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+D:\Personal Repository\ConfiguratorCore8\bin\Debug\net8.0-windows\Serilog.dll
+D:\Personal Repository\ConfiguratorCore8\bin\Debug\net8.0-windows\RestSharp.dll
+D:\Personal Repository\ConfiguratorCore8\bin\Debug\net8.0-windows\Smart.Utils.dll

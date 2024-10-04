@@ -33,18 +33,29 @@
             safeEpson = new RadioButton();
             safeKyocera = new RadioButton();
             safeRicoh = new RadioButton();
-            label1 = new Label();
             groupBox2 = new GroupBox();
             txtIpServidor = new TextBox();
             lbl_IpServerSafePrint = new Label();
             btnSendConfig = new Button();
             hasScanToMeSafePrint = new CheckBox();
-            textBox1 = new TextBox();
+            txtIpMfp = new TextBox();
             lblMfpIp = new Label();
-            txtWsDestSafePrint = new TextBox();
             smbConfigGroup = new GroupBox();
+            lblPort = new Label();
+            txtPort = new TextBox();
+            lblMaxSize = new Label();
+            lblUser = new Label();
+            lblPassword = new Label();
+            lblDestiny = new Label();
+            lblDomain = new Label();
+            txtMaxSize = new TextBox();
+            txtPassword = new TextBox();
+            txtUser = new TextBox();
+            txtDestiny = new TextBox();
+            txtDomain = new TextBox();
             modelSelected.SuspendLayout();
             groupBox2.SuspendLayout();
+            smbConfigGroup.SuspendLayout();
             SuspendLayout();
             // 
             // modelSelected
@@ -85,6 +96,7 @@
             safeEpson.TabStop = true;
             safeEpson.Text = "Epson";
             safeEpson.UseVisualStyleBackColor = true;
+            safeEpson.CheckedChanged += safeEpson_CheckedChanged;
             // 
             // safeKyocera
             // 
@@ -96,6 +108,7 @@
             safeKyocera.TabStop = true;
             safeKyocera.Text = "Kyocera";
             safeKyocera.UseVisualStyleBackColor = true;
+            safeKyocera.CheckedChanged += safeKyocera_CheckedChanged;
             // 
             // safeRicoh
             // 
@@ -108,26 +121,14 @@
             safeRicoh.Text = "Ricoh";
             safeRicoh.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(240, 23);
-            label1.Name = "label1";
-            label1.Size = new Size(209, 23);
-            label1.TabIndex = 1;
-            label1.Text = "URL WebService SafePrint:";
-            // 
             // groupBox2
             // 
             groupBox2.Controls.Add(txtIpServidor);
             groupBox2.Controls.Add(lbl_IpServerSafePrint);
             groupBox2.Controls.Add(btnSendConfig);
             groupBox2.Controls.Add(hasScanToMeSafePrint);
-            groupBox2.Controls.Add(textBox1);
+            groupBox2.Controls.Add(txtIpMfp);
             groupBox2.Controls.Add(lblMfpIp);
-            groupBox2.Controls.Add(txtWsDestSafePrint);
-            groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(modelSelected);
             groupBox2.ForeColor = Color.White;
             groupBox2.Location = new Point(12, 27);
@@ -139,16 +140,17 @@
             // 
             // txtIpServidor
             // 
-            txtIpServidor.Location = new Point(457, 113);
+            txtIpServidor.BorderStyle = BorderStyle.None;
+            txtIpServidor.Location = new Point(472, 115);
             txtIpServidor.Name = "txtIpServidor";
-            txtIpServidor.Size = new Size(226, 27);
+            txtIpServidor.Size = new Size(226, 20);
             txtIpServidor.TabIndex = 8;
             // 
             // lbl_IpServerSafePrint
             // 
             lbl_IpServerSafePrint.AutoSize = true;
             lbl_IpServerSafePrint.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_IpServerSafePrint.Location = new Point(457, 87);
+            lbl_IpServerSafePrint.Location = new Point(472, 89);
             lbl_IpServerSafePrint.Name = "lbl_IpServerSafePrint";
             lbl_IpServerSafePrint.Size = new Size(121, 23);
             lbl_IpServerSafePrint.TabIndex = 7;
@@ -160,7 +162,7 @@
             btnSendConfig.FlatStyle = FlatStyle.Flat;
             btnSendConfig.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSendConfig.ForeColor = Color.FromArgb(255, 209, 208);
-            btnSendConfig.Location = new Point(510, 153);
+            btnSendConfig.Location = new Point(525, 155);
             btnSendConfig.Name = "btnSendConfig";
             btnSendConfig.Size = new Size(173, 37);
             btnSendConfig.TabIndex = 6;
@@ -172,7 +174,7 @@
             // 
             hasScanToMeSafePrint.AutoSize = true;
             hasScanToMeSafePrint.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            hasScanToMeSafePrint.Location = new Point(240, 160);
+            hasScanToMeSafePrint.Location = new Point(255, 162);
             hasScanToMeSafePrint.Name = "hasScanToMeSafePrint";
             hasScanToMeSafePrint.Size = new Size(158, 24);
             hasScanToMeSafePrint.TabIndex = 5;
@@ -180,32 +182,38 @@
             hasScanToMeSafePrint.UseVisualStyleBackColor = true;
             hasScanToMeSafePrint.CheckedChanged += hasScanToMeSafePrint_CheckedChanged;
             // 
-            // textBox1
+            // txtIpMfp
             // 
-            textBox1.Location = new Point(240, 113);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(209, 27);
-            textBox1.TabIndex = 4;
+            txtIpMfp.BorderStyle = BorderStyle.None;
+            txtIpMfp.Location = new Point(255, 115);
+            txtIpMfp.Name = "txtIpMfp";
+            txtIpMfp.Size = new Size(209, 20);
+            txtIpMfp.TabIndex = 4;
             // 
             // lblMfpIp
             // 
             lblMfpIp.AutoSize = true;
             lblMfpIp.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMfpIp.Location = new Point(240, 87);
+            lblMfpIp.Location = new Point(255, 89);
             lblMfpIp.Name = "lblMfpIp";
             lblMfpIp.Size = new Size(91, 23);
             lblMfpIp.TabIndex = 3;
             lblMfpIp.Text = "IP da MFP:";
             // 
-            // txtWsDestSafePrint
-            // 
-            txtWsDestSafePrint.Location = new Point(240, 49);
-            txtWsDestSafePrint.Name = "txtWsDestSafePrint";
-            txtWsDestSafePrint.Size = new Size(443, 27);
-            txtWsDestSafePrint.TabIndex = 2;
-            // 
             // smbConfigGroup
             // 
+            smbConfigGroup.Controls.Add(lblPort);
+            smbConfigGroup.Controls.Add(txtPort);
+            smbConfigGroup.Controls.Add(lblMaxSize);
+            smbConfigGroup.Controls.Add(lblUser);
+            smbConfigGroup.Controls.Add(lblPassword);
+            smbConfigGroup.Controls.Add(lblDestiny);
+            smbConfigGroup.Controls.Add(lblDomain);
+            smbConfigGroup.Controls.Add(txtMaxSize);
+            smbConfigGroup.Controls.Add(txtPassword);
+            smbConfigGroup.Controls.Add(txtUser);
+            smbConfigGroup.Controls.Add(txtDestiny);
+            smbConfigGroup.Controls.Add(txtDomain);
             smbConfigGroup.ForeColor = Color.White;
             smbConfigGroup.Location = new Point(12, 327);
             smbConfigGroup.Name = "smbConfigGroup";
@@ -213,6 +221,108 @@
             smbConfigGroup.TabIndex = 3;
             smbConfigGroup.TabStop = false;
             smbConfigGroup.Text = "Configuração SMB";
+            // 
+            // lblPort
+            // 
+            lblPort.AutoSize = true;
+            lblPort.Location = new Point(414, 172);
+            lblPort.Name = "lblPort";
+            lblPort.Size = new Size(46, 20);
+            lblPort.TabIndex = 11;
+            lblPort.Text = "Porta:";
+            // 
+            // txtPort
+            // 
+            txtPort.BorderStyle = BorderStyle.None;
+            txtPort.Location = new Point(414, 195);
+            txtPort.Name = "txtPort";
+            txtPort.Size = new Size(125, 20);
+            txtPort.TabIndex = 10;
+            // 
+            // lblMaxSize
+            // 
+            lblMaxSize.AutoSize = true;
+            lblMaxSize.Location = new Point(47, 172);
+            lblMaxSize.Name = "lblMaxSize";
+            lblMaxSize.Size = new Size(130, 20);
+            lblMaxSize.TabIndex = 9;
+            lblMaxSize.Text = "Tamanho máximo:";
+            // 
+            // lblUser
+            // 
+            lblUser.AutoSize = true;
+            lblUser.Location = new Point(47, 107);
+            lblUser.Name = "lblUser";
+            lblUser.Size = new Size(62, 20);
+            lblUser.TabIndex = 8;
+            lblUser.Text = "Usuário:";
+            // 
+            // lblPassword
+            // 
+            lblPassword.AutoSize = true;
+            lblPassword.Location = new Point(414, 107);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(52, 20);
+            lblPassword.TabIndex = 7;
+            lblPassword.Text = "Senha:";
+            // 
+            // lblDestiny
+            // 
+            lblDestiny.AutoSize = true;
+            lblDestiny.Location = new Point(414, 40);
+            lblDestiny.Name = "lblDestiny";
+            lblDestiny.Size = new Size(63, 20);
+            lblDestiny.TabIndex = 6;
+            lblDestiny.Text = "Destíno:";
+            // 
+            // lblDomain
+            // 
+            lblDomain.AutoSize = true;
+            lblDomain.Location = new Point(47, 40);
+            lblDomain.Name = "lblDomain";
+            lblDomain.Size = new Size(67, 20);
+            lblDomain.TabIndex = 5;
+            lblDomain.Text = "Domínio";
+            // 
+            // txtMaxSize
+            // 
+            txtMaxSize.BorderStyle = BorderStyle.None;
+            txtMaxSize.Location = new Point(47, 195);
+            txtMaxSize.Name = "txtMaxSize";
+            txtMaxSize.Size = new Size(130, 20);
+            txtMaxSize.TabIndex = 4;
+            // 
+            // txtPassword
+            // 
+            txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Location = new Point(414, 130);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(256, 20);
+            txtPassword.TabIndex = 3;
+            // 
+            // txtUser
+            // 
+            txtUser.BorderStyle = BorderStyle.None;
+            txtUser.Location = new Point(47, 130);
+            txtUser.Name = "txtUser";
+            txtUser.Size = new Size(256, 20);
+            txtUser.TabIndex = 2;
+            // 
+            // txtDestiny
+            // 
+            txtDestiny.BorderStyle = BorderStyle.None;
+            txtDestiny.Location = new Point(414, 68);
+            txtDestiny.Name = "txtDestiny";
+            txtDestiny.Size = new Size(256, 20);
+            txtDestiny.TabIndex = 1;
+            // 
+            // txtDomain
+            // 
+            txtDomain.BorderStyle = BorderStyle.None;
+            txtDomain.Location = new Point(47, 68);
+            txtDomain.Name = "txtDomain";
+            txtDomain.Size = new Size(256, 20);
+            txtDomain.TabIndex = 0;
             // 
             // ConfigurarSafePrint
             // 
@@ -229,17 +339,17 @@
             modelSelected.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            smbConfigGroup.ResumeLayout(false);
+            smbConfigGroup.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private GroupBox modelSelected;
-        private Label label1;
         private GroupBox groupBox2;
-        private TextBox textBox1;
+        private TextBox txtIpMfp;
         private Label lblMfpIp;
-        private TextBox txtWsDestSafePrint;
         private CheckBox hasScanToMeSafePrint;
         private RadioButton safeXerox;
         private RadioButton safeEpson;
@@ -249,5 +359,17 @@
         private Button btnSendConfig;
         private TextBox txtIpServidor;
         private Label lbl_IpServerSafePrint;
+        private Label lblUser;
+        private Label lblPassword;
+        private Label lblDestiny;
+        private Label lblDomain;
+        private TextBox txtMaxSize;
+        private TextBox txtPassword;
+        private TextBox txtUser;
+        private TextBox txtDestiny;
+        private TextBox txtDomain;
+        private Label lblMaxSize;
+        private TextBox txtPort;
+        private Label lblPort;
     }
 }

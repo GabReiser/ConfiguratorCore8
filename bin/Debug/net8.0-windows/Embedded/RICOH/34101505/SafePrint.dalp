@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DALP File for Device-SDK Sample Application -->
+
+<dalp dsdk="" spec="2.4" version="0.10">
+
+  <information>
+    <product-id>34101505</product-id>
+    <title>SafePrint</title>
+    <vendor>Selbetti Gestao de Documentos S.A.</vendor>
+    <abbreviation>SGD</abbreviation>
+    <icon href="./SafePrint.jar" basepath="current" location="jar">SafePrint.bmp</icon>
+    <description>Gestao segura e inteligente de impressoes</description>
+    <description type="outline">Gestao segura e inteligente de impressoes</description>
+    <description type="detail">Gestao segura e inteligente de impressoes</description>
+    <telephone>+55 (47) 3441-6000</telephone>
+    <fax>+55 (47) 3441-6021</fax>
+    <e-mail>selbetti@selbetti.com.br</e-mail>
+    <application-ver>1.5.0</application-ver>
+    <offline-allowed />
+  </information>
+
+  <security>
+    <all-permissions />
+  </security>
+
+  <resources>
+    <dsdk version="7.22" />
+    <jar href="./SafePrint.jar" basepath="current" main="true" />
+    <jar href="./usb-driver.jar" version="1.1.0" basepath="current" main="false" />
+    <jar href="./ws-comm.jar" version="1.2.0" basepath="current" main="false" />
+    <jar href="./ksoap2-assembly-3.3.1.jar" version="3.3.1" basepath="current" main="false" />
+    <encode-file>resources.smart</encode-file>
+  </resources>
+
+  <display-mode size="WVGA" type="COLOR" />
+  <display-mode size="uWVGA" type="COLOR" />
+
+  <shortcut id="0" type="xlet">
+    <home-icon type="original">
+    <icon-image display-type="WVGA" home-type="normal"
+      location="jar" href="./SafePrint.jar" basepath="current" icon-type="normal">SafePrint-WNN.bmp
+    </icon-image>
+    <icon-image display-type="WVGA" home-type="normal"
+      location="jar" href="./SafePrint.jar" basepath="current" icon-type="inverse">SafePrint-WNS.bmp
+    </icon-image>
+    <icon-image display-type="WVGA" home-type="easy"
+      location="jar" href="./SafePrint.jar" basepath="current" icon-type="normal">SafePrint-XSN.bmp
+    </icon-image>
+    <icon-image display-type="WVGA" home-type="easy"
+      location="jar" href="./SafePrint.jar" basepath="current" icon-type="inverse">SafePrint-XSS.bmp
+    </icon-image>
+    <icon-image display-type="uWVGA" home-type="normal"
+      location="jar" href="./SafePrint.jar" basepath="current" icon-type="normal">SafePrint-UNN.bmp
+    </icon-image>
+    <icon-image display-type="uWVGA" home-type="normal"
+      location="jar" href="./SafePrint.jar" basepath="current" icon-type="inverse">SafePrint-UNS.bmp
+    </icon-image>
+    <icon-image display-type="uWVGA" home-type="easy"
+      location="jar" href="./SafePrint.jar" basepath="current" icon-type="normal">SafePrint-XSN.bmp
+    </icon-image>
+    <icon-image display-type="uWVGA" home-type="easy"
+      location="jar" href="./SafePrint.jar" basepath="current" icon-type="inverse">SafePrint-XSS.bmp
+    </icon-image>
+    </home-icon>
+    <name lang="en">SafePrint</name>
+    <name lang="es">SafePrint</name>
+    <name lang="pt">SafePrint</name>
+  </shortcut>
+
+  <application-desc main-class="com.selbetti.ricoh.SafePrint" type="xlet" visible="true" auto-run="true">
+    <argument>#URLWEBSERVICE#</argument>
+    <argument>4</argument>
+  </application-desc>
+
+  <install mode="manual" destination="hdd" workDir="hdd" />
+
+</dalp>

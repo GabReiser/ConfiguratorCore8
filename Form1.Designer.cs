@@ -116,6 +116,7 @@
             button5.Text = "SafePrint";
             button5.TextAlign = ContentAlignment.MiddleLeft;
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
