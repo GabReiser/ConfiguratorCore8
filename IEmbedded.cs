@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConfiguratorNewest.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace ConfiguratorNewest
 {
     public interface IEmbedded
     {
-        void Install(EmbeddedParamsInfo info, bool isConfigurate);
-        void Uninstall(EmbeddedParamsInfo info);
+        void Install(EmbeddedParamsInfo info, bool isConfigurate, Company company);
+        void Uninstall(EmbeddedParamsInfo info, Company company);
     }
 }

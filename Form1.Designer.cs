@@ -100,6 +100,7 @@
             button4.Text = "SmartShare";
             button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -133,6 +134,7 @@
             button6.Text = "Satelitti/Rportal";
             button6.TextAlign = ContentAlignment.MiddleLeft;
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // iconButton2
             // 

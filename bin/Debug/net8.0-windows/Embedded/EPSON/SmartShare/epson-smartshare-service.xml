@@ -1,0 +1,9 @@
+<service>
+      <id>epson-smartshare-service</id>
+      <name>epson-smartshare-service</name>
+      <description>Backend service for Epson SmartShare</description>
+      <env name="HOME" value=".\"/>
+      <executable>java</executable>
+      <arguments>-Xrs -Xmx256m -jar C:\SmartShare-Embedded\epson-smartshare-service.jar --server.port=8091</arguments>
+      <logmode>rotate</logmode>
+</service>

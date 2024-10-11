@@ -17,8 +17,8 @@ namespace ConfiguratorNewest.Instalation.Ricoh
     {
         #region Constantes
         private const string DS_EMBEDDED_FILE_NAME = "34101505";
-        private const string ANDROID_EMBEDDED_CODE = "1711276261";
-        private const string EMBEDDED_BASE_DIRECTORY = @"Embedded\RICOH\";
+        private string ANDROID_EMBEDDED_CODE = "1711276261";
+        private string EMBEDDED_BASE_DIRECTORY = @"Embedded\RICOH\";
         private const int INTERVAL_SLEEPING = 10000;
         #endregion
 
@@ -42,25 +42,26 @@ namespace ConfiguratorNewest.Instalation.Ricoh
             }
         }
 
-        private void ProcessAction(EmbeddedParamsInfo info, ActionType action)
+        private void ProcessAction(EmbeddedParamsInfo info, ActionType action, Company company)
         {
+            validateComany(info);
             _isAndroid = info.CheckIsAndroid();
             if (_isAndroid)
                 this.LogEvent("Android device");
             if ((action == ActionType.Uninstall) || !_isAndroid)
-                this.executeRxopCommand(_isAndroid ? RxopCommandType.UNINSTALL : RxopCommandType.STOP_UNINSTALL, info);
+                this.executeRxopCommand(_isAndroid ? RxopCommandType.UNINSTALL : RxopCommandType.STOP_UNINSTALL, info, company);
             if (action == ActionType.Install)
-                this.executeRxopCommand(_isAndroid ? RxopCommandType.INSTALL : RxopCommandType.INSTALL_START, info);
+                this.executeRxopCommand(_isAndroid ? RxopCommandType.INSTALL : RxopCommandType.INSTALL_START, info, company);
             if (!_containsException && ((action == ActionType.Install && !_isAndroid) || (action == ActionType.Uninstall)))
-                this.executeRxopCommand(RxopCommandType.REBOOT, info);
+                this.executeRxopCommand(RxopCommandType.REBOOT, info, company);
         }
 
-        public void Install(EmbeddedParamsInfo info, bool isConfigurate)
+        public void Install(EmbeddedParamsInfo info, bool isConfigurate, Company company)
         {
             try
             {
                 if (!isConfigurate)
-                    ProcessAction(info, ActionType.Install);
+                    ProcessAction(info, ActionType.Install, company);
                 else
                     _isAndroid = true;
 
@@ -78,11 +79,11 @@ namespace ConfiguratorNewest.Instalation.Ricoh
 
         }
 
-        public void Uninstall(EmbeddedParamsInfo info)
+        public void Uninstall(EmbeddedParamsInfo info, Company company)
         {
             try
             {
-                ProcessAction(info, ActionType.Uninstall);
+                ProcessAction(info, ActionType.Uninstall, company);
             }
             catch (FileNotFoundException e)
             {
@@ -95,10 +96,12 @@ namespace ConfiguratorNewest.Instalation.Ricoh
 
         }
 
-        private void executeRxopCommand(RxopCommandType commandType, EmbeddedParamsInfo impressoraInfo)
+        private void executeRxopCommand(RxopCommandType commandType, EmbeddedParamsInfo impressoraInfo, Company company)
         {
+            validateComany(impressoraInfo);
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            string rxopClientJarPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Embedded\RICOH\RXOP\rxopClient.jar");
+            string rxopClientJarPathDirectory = @"Embedded\" + company.ToString().ToUpper().Trim() + @"\RXOP\rxopClient.jar";
+            string rxopClientJarPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, rxopClientJarPathDirectory);
             if (!File.Exists(rxopClientJarPath))
                 throw new FileNotFoundException("Rxop client JAR not found.", rxopClientJarPath);
 
@@ -246,7 +249,21 @@ namespace ConfiguratorNewest.Instalation.Ricoh
                             return true; // **** Always accept
                         };
             }
-
+            switch (impressoraInfo.Product)
+            {
+                case Product.SmartShare:
+                    EMBEDDED_BASE_DIRECTORY = @"Embedded\Tracker\RICOH\";
+                    ANDROID_EMBEDDED_CODE = "1711276263";
+                    break;
+                case Product.SafePrint:
+                    EMBEDDED_BASE_DIRECTORY = @"Embedded\SafePrint\RICOH\";
+                    ANDROID_EMBEDDED_CODE = "1711276261";
+                    break;
+                case Product.Tracker:
+                    EMBEDDED_BASE_DIRECTORY = @"Embedded\Tracker\RICOH\";
+                    ANDROID_EMBEDDED_CODE = "1711276234";
+                    break;
+            }
             RestRequest request = new RestRequest("/rws/sop/" + ANDROID_EMBEDDED_CODE + "/remoteConfig", Method.Post);
             request.AddParameter("application/json; charset=utf-8", ParameterType.RequestBody);
             request.AddJsonBody(new { webServiceUrl = impressoraInfo.DsUrlWebService });
@@ -284,6 +301,24 @@ namespace ConfiguratorNewest.Instalation.Ricoh
             {
                 LogEvent($"Exception: {ex.Message}");
                 throw;
+            }
+        }
+        public void validateComany(EmbeddedParamsInfo impressoraInfo)
+        {
+            switch (impressoraInfo.Product)
+            {
+                case Product.SmartShare:
+                    EMBEDDED_BASE_DIRECTORY = @"Embedded\Tracker\RICOH\";
+                    ANDROID_EMBEDDED_CODE = "1711276263";
+                    break;
+                case Product.SafePrint:
+                    EMBEDDED_BASE_DIRECTORY = @"Embedded\SafePrint\RICOH\";
+                    ANDROID_EMBEDDED_CODE = "1711276261";
+                    break;
+                case Product.Tracker:
+                    EMBEDDED_BASE_DIRECTORY = @"Embedded\Tracker\RICOH\";
+                    ANDROID_EMBEDDED_CODE = "1711276234";
+                    break;
             }
         }
     }

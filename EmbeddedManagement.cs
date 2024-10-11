@@ -30,7 +30,7 @@ namespace ConfiguratorNewest
             switch (company)
             {
                 case Company.Ricoh:
-                    new ManagementRICOH().Install(info, isConfigurate);
+                    new ManagementRICOH().Install(info, isConfigurate, company);
                     break;
             }
 
@@ -45,7 +45,7 @@ namespace ConfiguratorNewest
             switch (company)
             {
                 case Company.Ricoh:
-                    new ManagementRICOH().Uninstall(info);
+                    new ManagementRICOH().Uninstall(info, company);
                     break;
             }
 

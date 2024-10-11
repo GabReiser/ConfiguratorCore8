@@ -174,5 +174,17 @@ namespace ConfiguratorNewest
             hideSubMenu();
             OpenChildForm(new InstalarSafePrint());
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            OpenChildForm(new InstalarShare());
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            OpenChildForm(new InstalarSatelitti());
+        }
     }
 }

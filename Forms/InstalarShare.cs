@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConfiguratorNewest.SmartShare.Epson;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace ConfiguratorNewest.Forms
         public InstalarShare()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            InstallServiceEpsonShare installServiceEpsonShare = new InstallServiceEpsonShare();
+            installServiceEpsonShare.InstallServiceEpson();
         }
     }
 }

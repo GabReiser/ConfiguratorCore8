@@ -1,3 +1,10 @@
+D:\Personal Repository\ConfiguratorCore8\bin\Release\net8.0-windows\Embedded\RICOH\SafePrint\1711276261\1711276261.zip
+D:\Personal Repository\ConfiguratorCore8\bin\Release\net8.0-windows\Embedded\RICOH\SafePrint\1711276261\interface.zip
+D:\Personal Repository\ConfiguratorCore8\bin\Release\net8.0-windows\Embedded\RICOH\SafePrint\34101505\34101505.zip
+D:\Personal Repository\ConfiguratorCore8\bin\Release\net8.0-windows\Embedded\RICOH\SafePrint\34101505\SafePrint.dalp
+D:\Personal Repository\ConfiguratorCore8\bin\Release\net8.0-windows\Embedded\RICOH\SafePrint\ROCLI\acl\acl.dist
+D:\Personal Repository\ConfiguratorCore8\bin\Release\net8.0-windows\Embedded\RICOH\SafePrint\ROCLI\rportal-rocli.jar
+D:\Personal Repository\ConfiguratorCore8\bin\Release\net8.0-windows\Embedded\RICOH\SafePrint\RXOP\rxopClient.jar
 D:\Personal Repository\ConfiguratorCore8\bin\Release\net8.0-windows\ConfiguratorNewest.exe
 D:\Personal Repository\ConfiguratorCore8\bin\Release\net8.0-windows\ConfiguratorNewest.deps.json
 D:\Personal Repository\ConfiguratorCore8\bin\Release\net8.0-windows\ConfiguratorNewest.runtimeconfig.json

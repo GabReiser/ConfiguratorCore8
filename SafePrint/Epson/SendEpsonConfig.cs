@@ -19,7 +19,7 @@ namespace ConfiguratorNewest.SafePrint.Epson
             _logger = logger;
         }
 
-        public void sendConfigToEpson(IProgress<int> progress)
+        public void sendConfigToEpson()
         {
             _logger.LogInformation("----------- ENVIO PARA EPSON ---------------");
             StringUtils stringUtils = new StringUtils();
@@ -62,7 +62,7 @@ namespace ConfiguratorNewest.SafePrint.Epson
                 HttpResponseMessage response = client.PostAsync(endPoint, content).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    progress.Report(100);
+                    //progress.Report(100);
                     _logger.LogInformation($"{response.StatusCode} - Requisição POST bem-sucedida! /nDetalhes:{response.Content}");
                     MessageBox.Show("Sucesso ao enviar a configuração", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

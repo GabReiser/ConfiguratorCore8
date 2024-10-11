@@ -24,6 +24,7 @@ namespace ConfiguratorNewest
         public string DsPassword { get; set; }
 
         public bool SslActive { get; set; }
+        public Product Product { get; set; }
 
         public bool Validate(ActionType type)
         {

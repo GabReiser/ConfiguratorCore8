@@ -34,7 +34,6 @@
             safeKyocera = new RadioButton();
             safeRicoh = new RadioButton();
             groupBox2 = new GroupBox();
-            txtIpServidor = new TextBox();
             lbl_IpServerSafePrint = new Label();
             btnSendConfig = new Button();
             hasScanToMeSafePrint = new CheckBox();
@@ -53,6 +52,7 @@
             txtUser = new TextBox();
             txtDestiny = new TextBox();
             txtDomain = new TextBox();
+            txtIpServidor = new TextBox();
             modelSelected.SuspendLayout();
             groupBox2.SuspendLayout();
             smbConfigGroup.SuspendLayout();
@@ -138,14 +138,6 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Configurador SafePrint";
             // 
-            // txtIpServidor
-            // 
-            txtIpServidor.BorderStyle = BorderStyle.None;
-            txtIpServidor.Location = new Point(472, 115);
-            txtIpServidor.Name = "txtIpServidor";
-            txtIpServidor.Size = new Size(226, 20);
-            txtIpServidor.TabIndex = 8;
-            // 
             // lbl_IpServerSafePrint
             // 
             lbl_IpServerSafePrint.AutoSize = true;
@@ -184,11 +176,12 @@
             // 
             // txtIpMfp
             // 
-            txtIpMfp.BorderStyle = BorderStyle.None;
             txtIpMfp.Location = new Point(255, 115);
             txtIpMfp.Name = "txtIpMfp";
-            txtIpMfp.Size = new Size(209, 20);
+            txtIpMfp.Size = new Size(209, 27);
             txtIpMfp.TabIndex = 4;
+            txtIpMfp.Enter += txtIpMfp_Enter;
+            txtIpMfp.Leave += txtIpMfp_Leave;
             // 
             // lblMfpIp
             // 
@@ -233,10 +226,9 @@
             // 
             // txtPort
             // 
-            txtPort.BorderStyle = BorderStyle.None;
             txtPort.Location = new Point(414, 195);
             txtPort.Name = "txtPort";
-            txtPort.Size = new Size(125, 20);
+            txtPort.Size = new Size(125, 27);
             txtPort.TabIndex = 10;
             // 
             // lblMaxSize
@@ -286,43 +278,45 @@
             // 
             // txtMaxSize
             // 
-            txtMaxSize.BorderStyle = BorderStyle.None;
             txtMaxSize.Location = new Point(47, 195);
             txtMaxSize.Name = "txtMaxSize";
-            txtMaxSize.Size = new Size(130, 20);
+            txtMaxSize.Size = new Size(130, 27);
             txtMaxSize.TabIndex = 4;
             // 
             // txtPassword
             // 
-            txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Location = new Point(414, 130);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(256, 20);
+            txtPassword.Size = new Size(256, 27);
             txtPassword.TabIndex = 3;
             // 
             // txtUser
             // 
-            txtUser.BorderStyle = BorderStyle.None;
             txtUser.Location = new Point(47, 130);
             txtUser.Name = "txtUser";
-            txtUser.Size = new Size(256, 20);
+            txtUser.Size = new Size(256, 27);
             txtUser.TabIndex = 2;
             // 
             // txtDestiny
             // 
-            txtDestiny.BorderStyle = BorderStyle.None;
             txtDestiny.Location = new Point(414, 68);
             txtDestiny.Name = "txtDestiny";
-            txtDestiny.Size = new Size(256, 20);
+            txtDestiny.Size = new Size(256, 27);
             txtDestiny.TabIndex = 1;
             // 
             // txtDomain
             // 
-            txtDomain.BorderStyle = BorderStyle.None;
             txtDomain.Location = new Point(47, 68);
             txtDomain.Name = "txtDomain";
-            txtDomain.Size = new Size(256, 20);
+            txtDomain.Size = new Size(256, 27);
             txtDomain.TabIndex = 0;
+            // 
+            // txtIpServidor
+            // 
+            txtIpServidor.Location = new Point(472, 115);
+            txtIpServidor.Name = "txtIpServidor";
+            txtIpServidor.Size = new Size(226, 27);
+            txtIpServidor.TabIndex = 8;
             // 
             // ConfigurarSafePrint
             // 
@@ -357,7 +351,6 @@
         private RadioButton safeRicoh;
         private GroupBox smbConfigGroup;
         private Button btnSendConfig;
-        private TextBox txtIpServidor;
         private Label lbl_IpServerSafePrint;
         private Label lblUser;
         private Label lblPassword;
@@ -371,5 +364,6 @@
         private Label lblMaxSize;
         private TextBox txtPort;
         private Label lblPort;
+        private TextBox txtIpServidor;
     }
 }

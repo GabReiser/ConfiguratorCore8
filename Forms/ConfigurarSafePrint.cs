@@ -90,6 +90,7 @@ namespace ConfiguratorNewest.Forms
             SafePrintEpsonConfig safePrintEpsonConfig = new SafePrintEpsonConfig();
             SafePrintKyoceraConfig safePrintKyoceraConfig = new SafePrintKyoceraConfig();
             SendKyoceraConfig sendKyoceraConfig = new SendKyoceraConfig(_logger);
+            SendEpsonConfig sendEpsonConfig = new SendEpsonConfig(_logger);
 
             string fabricanteSelecionado = GetSelectedModel();
             switch (fabricanteSelecionado)
@@ -127,6 +128,8 @@ namespace ConfiguratorNewest.Forms
                         safePrintEpsonConfig.ScanToMeEpson = scanToMeEpson;
 
                     }
+                    sendEpsonConfig.SafePrintEpsonConfig = safePrintEpsonConfig;
+                    sendEpsonConfig.sendConfigToEpson();
                     break;
                 case "Xerox":
                     break;
@@ -163,6 +166,25 @@ namespace ConfiguratorNewest.Forms
             smbConfigGroup.Visible = false;
             btnSendConfig.Visible = false;
             hasScanToMeSafePrint.Checked = false;
+        }
+
+        private void EnterFocusTxt(TextBox txt)
+        {
+            txt.ForeColor = Color.SteelBlue;
+        }
+        private void LeaveFocusTxt(TextBox txt)
+        {
+            txt.ForeColor = Color.Gray;
+        }
+
+        private void txtIpMfp_Enter(object sender, EventArgs e)
+        {
+            EnterFocusTxt(txtIpMfp);
+        }
+
+        private void txtIpMfp_Leave(object sender, EventArgs e)
+        {
+            LeaveFocusTxt(txtIpMfp);
         }
     }
 }
